@@ -1,0 +1,61 @@
+{
+  "source": "Published dimensional standards used as city overlays when live GIS is unavailable. Live NYC PLUTO FAR/district at the pin overrides these.",
+  "cities": {
+    "new york": {
+      "match": ["new york", "nyc", "brooklyn", "manhattan", "queens", "bronx", "staten island"],
+      "single_family": {"front": 4.5, "rear": 9.0, "side": 1.5, "height": 10.7, "coverage": 0.40, "far": 0.75, "green": 0.25, "stories": 3, "note": "NYC R3–R4 low-density typical: ~35 ft, 0.5–0.75 FAR"},
+      "duplex": {"front": 4.5, "rear": 9.0, "side": 1.2, "height": 10.7, "coverage": 0.45, "far": 1.00, "green": 0.22, "stories": 3, "note": "NYC R4–R5"},
+      "townhouse": {"front": 3.0, "rear": 6.0, "side": 0.0, "height": 12.2, "coverage": 0.55, "far": 1.25, "green": 0.18, "stories": 4, "note": "NYC R5–R6A townhouse"},
+      "apartment": {"front": 4.6, "rear": 6.1, "side": 2.4, "height": 23.0, "coverage": 0.65, "far": 2.43, "green": 0.15, "stories": 7, "note": "NYC R6 residential FAR 2.43; height from Quality Housing context"},
+      "mixed_use": {"front": 3.0, "rear": 6.0, "side": 2.0, "height": 26.0, "coverage": 0.70, "far": 3.00, "green": 0.12, "stories": 8, "note": "NYC C2/R7 contextual mixed-use"},
+      "office": {"front": 3.0, "rear": 6.0, "side": 2.4, "height": 36.0, "coverage": 0.70, "far": 6.00, "green": 0.10, "stories": 10, "note": "NYC C5/C6 commercial overlay, reduced for this tool"},
+      "community": {"front": 6.0, "rear": 6.0, "side": 3.0, "height": 15.0, "coverage": 0.45, "far": 2.00, "green": 0.25, "stories": 4, "note": "NYC community-facility FAR often 2.0–4.8"}
+    },
+    "portland": {
+      "match": ["portland"],
+      "single_family": {"front": 3.0, "rear": 1.5, "side": 1.5, "height": 9.1, "coverage": 0.50, "far": 0.70, "green": 0.30, "stories": 3, "note": "Portland R5 / R2.5: 30 ft height, 5 ft side, 10 ft front typical"},
+      "duplex": {"front": 3.0, "rear": 1.5, "side": 1.5, "height": 10.7, "coverage": 0.50, "far": 0.80, "green": 0.25, "stories": 3, "note": "Portland R2.5 duplex"},
+      "townhouse": {"front": 2.4, "rear": 1.5, "side": 0.0, "height": 10.7, "coverage": 0.60, "far": 1.00, "green": 0.20, "stories": 4, "note": "Portland RM1 townhouse"},
+      "apartment": {"front": 3.0, "rear": 3.0, "side": 1.5, "height": 13.7, "coverage": 0.60, "far": 1.50, "green": 0.20, "stories": 4, "note": "Portland RM2 mid-density ~45 ft"},
+      "mixed_use": {"front": 0.0, "rear": 3.0, "side": 0.0, "height": 22.9, "coverage": 0.85, "far": 3.00, "green": 0.10, "stories": 7, "note": "Portland CM2 mixed-use"},
+      "office": {"front": 0.0, "rear": 3.0, "side": 1.5, "height": 22.9, "coverage": 0.80, "far": 3.00, "green": 0.12, "stories": 7, "note": "Portland EX/CM3"},
+      "community": {"front": 4.5, "rear": 4.5, "side": 3.0, "height": 13.7, "coverage": 0.50, "far": 1.00, "green": 0.30, "stories": 3, "note": "Portland IR/CI institutional"}
+    },
+    "seattle": {
+      "match": ["seattle"],
+      "single_family": {"front": 4.6, "rear": 7.6, "side": 1.5, "height": 9.1, "coverage": 0.35, "far": 0.50, "green": 0.35, "stories": 3, "note": "Seattle NR3: 30 ft, 5 ft sides, 15/25 ft yards"},
+      "apartment": {"front": 2.1, "rear": 3.0, "side": 1.5, "height": 12.2, "coverage": 0.60, "far": 1.30, "green": 0.20, "stories": 4, "note": "Seattle LR2/LR3"},
+      "mixed_use": {"front": 0.0, "rear": 3.0, "side": 0.0, "height": 20.0, "coverage": 0.80, "far": 3.25, "green": 0.10, "stories": 6, "note": "Seattle NC3"}
+    },
+    "san francisco": {
+      "match": ["san francisco", "sf"],
+      "single_family": {"front": 4.6, "rear": 4.6, "side": 0.9, "height": 12.2, "coverage": 0.55, "far": 0.90, "green": 0.25, "stories": 4, "note": "SF RH-1/RH-2 40 ft"},
+      "apartment": {"front": 4.6, "rear": 4.6, "side": 1.5, "height": 15.2, "coverage": 0.65, "far": 1.80, "green": 0.18, "stories": 5, "note": "SF RM-1/RM-2"}
+    },
+    "los angeles": {
+      "match": ["los angeles", "la "],
+      "single_family": {"front": 6.1, "rear": 4.6, "side": 1.5, "height": 10.1, "coverage": 0.45, "far": 0.45, "green": 0.30, "stories": 3, "note": "LA R1 33 ft, 45% coverage typical"},
+      "apartment": {"front": 4.6, "rear": 4.6, "side": 2.4, "height": 13.7, "coverage": 0.60, "far": 1.50, "green": 0.20, "stories": 4, "note": "LA R3"}
+    },
+    "chicago": {
+      "match": ["chicago"],
+      "single_family": {"front": 4.6, "rear": 9.1, "side": 1.2, "height": 9.1, "coverage": 0.40, "far": 0.70, "green": 0.30, "stories": 3, "note": "Chicago RS-3"},
+      "apartment": {"front": 4.6, "rear": 9.1, "side": 2.4, "height": 15.2, "coverage": 0.55, "far": 1.50, "green": 0.20, "stories": 5, "note": "Chicago RM-5"}
+    },
+    "boston": {
+      "match": ["boston"],
+      "single_family": {"front": 4.6, "rear": 9.1, "side": 1.8, "height": 10.7, "coverage": 0.40, "far": 0.50, "green": 0.30, "stories": 3, "note": "Boston 1F-5000 / 2F typical"},
+      "apartment": {"front": 3.0, "rear": 6.1, "side": 2.4, "height": 16.8, "coverage": 0.60, "far": 2.00, "green": 0.18, "stories": 5, "note": "Boston H-2/H-3"}
+    },
+    "austin": {
+      "match": ["austin"],
+      "single_family": {"front": 7.6, "rear": 3.0, "side": 1.5, "height": 10.7, "coverage": 0.40, "far": 0.40, "green": 0.35, "stories": 3, "note": "Austin SF-3 35 ft"},
+      "apartment": {"front": 4.6, "rear": 3.0, "side": 1.5, "height": 12.2, "coverage": 0.55, "far": 0.75, "green": 0.25, "stories": 4, "note": "Austin MF-3"}
+    },
+    "denver": {
+      "match": ["denver"],
+      "single_family": {"front": 6.1, "rear": 6.1, "side": 1.5, "height": 9.1, "coverage": 0.375, "far": 0.60, "green": 0.35, "stories": 3, "note": "Denver S-SU-D / U-SU-C"},
+      "apartment": {"front": 3.0, "rear": 3.0, "side": 1.5, "height": 13.7, "coverage": 0.60, "far": 1.50, "green": 0.20, "stories": 4, "note": "Denver G-MU-3"}
+    }
+  }
+}

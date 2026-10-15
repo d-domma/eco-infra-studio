@@ -1,0 +1,13 @@
+{
+  "source": "Screening labels from Carbon Leadership Forum WBLCA Benchmark Study v2 typical intensity bands (A1–A5 kg CO2e per m2). These are NOT measured carbon for a specific NYC lot.",
+  "citation": "https://carbonleadershipforum.org/clf-wblca-v2/",
+  "by_type_kg_per_m2": {
+    "single_family": 280,
+    "duplex": 290,
+    "townhouse": 300,
+    "apartment": 330,
+    "mixed_use": 360,
+    "office": 400,
+    "community": 350
+  }
+}

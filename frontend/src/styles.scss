@@ -1,0 +1,109 @@
+:root {
+  --ink: #1c2418;
+  --moss: #2f4a32;
+  --leaf: #4c7a4b;
+  --canopy: #7ea36e;
+  --cream: #f4efe4;
+  --paper: #fffaf1;
+  --clay: #c46a3a;
+  --line: #d7d0c2;
+  --good: #2f7d4a;
+  --warn: #a15c12;
+  --bad: #9b2c2c;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: Fraunces, Georgia, serif;
+}
+
+a {
+  color: var(--moss);
+}
+
+.nav-brand {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(126, 163, 110, 0.35), transparent),
+    linear-gradient(180deg, #e7eedc 0%, var(--cream) 100%);
+}
+
+.card-quiet {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(28, 36, 24, 0.04);
+}
+
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.btn-moss {
+  background: var(--moss);
+  color: #f7f4ea;
+  border: none;
+}
+
+.btn-moss:hover {
+  background: #243a27;
+  color: #fff;
+}
+
+.btn-clay {
+  background: var(--clay);
+  color: white;
+  border: none;
+}
+
+.metric {
+  border-left: 3px solid var(--canopy);
+  padding-left: 0.85rem;
+}
+
+.pass {
+  color: var(--good);
+}
+
+.fail {
+  color: var(--bad);
+}
+
+.form-control,
+.form-select {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--moss);
+}
+
+canvas.viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 16px;
+}

@@ -1,0 +1,37 @@
+{
+  "source": "Order-of-magnitude site EUI (kBtu/ft2/yr) from public ResStock/ComStock stock summaries. Used ONLY when NYC LL84 has no measured EUI for that lot.",
+  "citation": "https://resstock.nlr.gov/datasets and https://comstock.nlr.gov/page/datasets",
+  "by_type": {
+    "single_family": {
+      "Cold / heating-dominated": 62,
+      "Temperate": 48,
+      "Cool dry": 50,
+      "Warm temperate": 42,
+      "Hot / cooling-dominated": 40,
+      "Hot arid": 44,
+      "default": 50
+    },
+    "duplex": {
+      "default": 48
+    },
+    "townhouse": {
+      "default": 46
+    },
+    "apartment": {
+      "Cold / heating-dominated": 58,
+      "Temperate": 52,
+      "default": 54
+    },
+    "mixed_use": {
+      "default": 62
+    },
+    "office": {
+      "Cold / heating-dominated": 72,
+      "Temperate": 64,
+      "default": 68
+    },
+    "community": {
+      "default": 60
+    }
+  }
+}
