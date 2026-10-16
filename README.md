@@ -1,72 +1,93 @@
-# Eco Infra Studio
+Eco Infra Studio | AI-Assisted Sustainable Infrastructure Design
 
-A sustainable infrastructure design app: enter a site and preferences, cross-check **open environmental data** and **model building-code rules**, then generate an editable **Blender** building with STL for 3D printing.
+An AI-assisted infrastructure design platform that helps users plan sustainable buildings by analyzing environmental conditions, energy efficiency, construction materials, and local building constraints.
 
-This matches the project abstract, with Blender used for the 3D design instead of generic CAD.
+Project Overview
 
-## Stack
+I developed Eco Infra Studio to explore how artificial intelligence and environmental data could improve infrastructure planning.
 
-- **Angular + Bootstrap** — design wizard, impact dashboard, 3D preview
-- **Python (FastAPI)** — geocoding, climate, green-space, compliance, carbon comparison
-- **Blender 4.3 / 5.x** — parametric `.blend` / `.glb` / `.stl` + optional preview render
+Instead of designing a building based only on appearance or cost, the platform allows users to explore how different design decisions affect energy consumption, environmental impact, and overall feasibility.
 
-## Run locally
+The application brings together environmental analysis, design optimization, and automated 3D modeling.
 
-Install [Blender](https://www.blender.org/) if needed (this machine already has 4.3 and 5.2). Then from the repo root:
+Key Features
 
-```powershell
-.\start.ps1
-```
+1. AI-Assisted Infrastructure Design
 
-Or in two terminals:
+Generates and compares building configurations based on user preferences.
 
-```powershell
-# terminal 1 — API
-cd backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python -m uvicorn app.main:app --reload --port 8000
-```
+Considers location, budget, building dimensions, construction materials, and available green space.
 
-```powershell
-# terminal 2 — UI
-cd frontend
-npm install
-npm start
-```
+Ranks potential designs using estimated energy performance and environmental impact.
 
-Open [http://localhost:4200](http://localhost:4200).
+2. Environmental Impact Analysis
 
-Optional: set `BLENDER_PATH` if Blender is not in `C:\Program Files\Blender Foundation\`.
+Retrieves climate and air-quality information using Open-Meteo APIs.
 
-## What a run produces
+Uses OpenStreetMap data to analyze nearby parks and green spaces.
 
-For each design, `backend/outputs/<id>/` contains:
+Compares estimated energy usage and carbon impact across different building designs.
 
-| File | Use |
-| --- | --- |
-| `model.blend` | Open and refine in Blender |
-| `model.stl` | 3D-print the massing |
-| `model.glb` | Web preview |
-| `preview.png` | Still image |
-| `spec.json` | Dimensions fed to Blender |
+Explores opportunities to reduce environmental impact through material selection and design choices.
 
-## Data sources
+3. Building Constraints and Feasibility
 
-- Open-Meteo geocoding, climate archive, and air quality
-- OpenStreetMap / Overpass for parks and habitat within 900 m
-- IBC-inspired zoning envelope (setbacks, height, coverage, FAR, open space, stormwater)
-- NYC [PLUTO](https://data.cityofnewyork.us/City-Government/Primary-Land-Use-Tax-Lot-Output-PLUTO-/64uk-42ks) lots + [LL84](https://data.cityofnewyork.us/Environment/NYC-Building-Energy-and-Water-Data-Disclosure-for-/5zyy-y8am) measured site EUI
-- CLF WBLCA typical embodied intensities (labels, not per-lot measured carbon)
-- ResStock/ComStock typical EUI only when LL84 has no reading
+Evaluates designs against modeled zoning and building constraints.
 
-Refresh the local stock (from `backend/`):
+Considers building height, setbacks, site coverage, and open-space requirements.
 
-```powershell
-python scripts/import_nyc_stock.py
-```
+Filters configurations that do not meet the application's feasibility rules.
 
-The searcher only sends **code-passing** designs to Blender. Carbon savings vs conventional still use the defined concrete / high-coverage twin in `app/services/analysis.py`. Peer EUI is a separate comparison against NYC LL84.
+4. Automated 3D Modeling
 
-If an API is unreachable, the backend falls back to plausible defaults so you can still generate a model.
+Integrates Blender to generate 3D representations of proposed buildings.
+
+Produces editable building models for further development.
+
+Supports 3D visualization and STL export for physical prototyping or 3D printing.
+
+5. Interactive Design Interface
+
+Provides a guided interface for entering project requirements.
+
+Displays environmental comparisons and design results.
+
+Allows users to review generated building configurations.
+
+Technologies Used
+
+Frontend
+
+Angular
+
+TypeScript
+
+Bootstrap
+
+Three.js
+
+Backend and Analysis
+
+Python
+
+FastAPI
+
+scikit-learn
+
+Environmental and geospatial data APIs
+
+3D Modeling
+
+Blender
+
+GLB and STL model export
+
+Data Sources
+
+Open-Meteo
+
+OpenStreetMap
+
+NYC PLUTO property data
+
+NYC Local Law 84 energy benchmarking data
